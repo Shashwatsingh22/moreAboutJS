@@ -1,19 +1,18 @@
-let a=0;
-
 function x()
 {
-  console.log(a);
-     if(a) return;
-     
-     console.log("This Function Can Only Run Once");
-     
-     return function y()
-     {
-          a=1;
-          return a;
-     }
+  let a=0;
+  return function check()
+  {
+    if(!a++) 
+    {
+      console.log("This Function will execute Once.")
+      return;
+    }
+    console.log("You Can't Execute it For the Second Time.")
+    return;
+  }
 }
 
-z=x();
-z()
-x();
+z=x()
+z() //Op - This Function will exute once
+z() //OP - You can't Execute it for the second time.
